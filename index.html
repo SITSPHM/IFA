@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Presentation — Prototype</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"></span><span>PROJECT / PRESENTATION</span></div>
+      <div class="topbar-right">
+        <span id="screen-label">MAIN MENU</span>
+        <button class="small-button" id="help-button" type="button">CONTROLS</button>
+      </div>
+    </header>
+
+    <section class="stage-wrap" aria-label="Presentation">
+      <div id="stage" class="stage">
+        <!-- Main menu -->
+        <section id="menu-screen" class="screen menu-screen is-active">
+          <div class="menu-copy">
+            <p class="eyebrow">AN INTERACTIVE PRESENTATION</p>
+            <h1>THE<br><span>SUBJECT</span></h1>
+            <p class="placeholder-copy">A short introductory line can go here. Replace this text when your content is ready.</p>
+            <nav class="subject-menu" aria-label="Choose a subject">
+              <button class="subject-button" data-subject="math"><span class="subject-number">01</span><span class="subject-name">MATH</span><span class="subject-arrow">↗</span></button>
+              <button class="subject-button" data-subject="biology"><span class="subject-number">02</span><span class="subject-name">BIOLOGY</span><span class="subject-arrow">↗</span></button>
+              <button class="subject-button" data-subject="geography"><span class="subject-number">03</span><span class="subject-name">GEOGRAPHY</span><span class="subject-arrow">↗</span></button>
+            </nav>
+          </div>
+          <div class="menu-character-area">
+            <div class="circle-backdrop"></div>
+            <div class="character-placeholder menu-character" aria-label="Character placeholder">
+              <span class="placeholder-tag">CHARACTER<br>SPRITE</span>
+              <span class="character-head"></span><span class="character-body"></span>
+              <span class="character-note">Replace with your character art</span>
+            </div>
+            <!-- Invisible Easter-egg hit area; reposition over the character's nose later. -->
+            <button id="nose-secret" class="nose-secret" type="button" aria-label="Secret conclusion shortcut" title=""></button>
+          </div>
+          <div class="menu-footer"><span>CLICK A SUBJECT TO BEGIN</span><span>BUILD 00.1</span></div>
+        </section>
+
+        <!-- Subject content screen -->
+        <section id="content-screen" class="screen content-screen">
+          <aside class="content-sidebar">
+            <button id="home-button" class="back-button" type="button">← MENU</button>
+            <p class="eyebrow" id="subject-kicker">SUBJECT / 01</p>
+            <h2 id="subject-title">MATH</h2>
+            <div class="page-indicator"><span id="page-current">01</span><span class="indicator-line"></span><span id="page-total">03</span></div>
+            <div class="content-text">
+              <h3 id="page-title">Page title placeholder</h3>
+              <p id="page-description">This is where the explanation goes. Keep the text concise and use the visual area for diagrams, examples, and supporting material.</p>
+              <div id="page-bullets" class="bullet-list">
+                <p>— Placeholder point one</p><p>— Placeholder point two</p><p>— Placeholder point three</p>
+              </div>
+            </div>
+            <div class="page-navigation">
+              <button id="previous-page" class="nav-button" type="button">← PREVIOUS</button>
+              <button id="next-page" class="nav-button primary" type="button">NEXT →</button>
+            </div>
+          </aside>
+          <section class="visual-panel">
+            <div class="visual-panel-top"><span id="visual-label">VISUAL / 01</span><span>ILLUSTRATION AREA</span></div>
+            <div class="visual-placeholder" id="visual-placeholder">
+              <div class="visual-frame">
+                <span class="frame-corner corner-tl"></span><span class="frame-corner corner-tr"></span>
+                <span class="frame-corner corner-bl"></span><span class="frame-corner corner-br"></span>
+                <span class="visual-cross">＋</span>
+                <span class="visual-placeholder-title">VISUAL<br>PLACEHOLDER</span>
+                <span class="visual-placeholder-subtitle">Diagram / image / animation</span>
+              </div>
+            </div>
+            <div class="character-dock">
+              <div class="mini-character-placeholder"><span>CHARACTER<br>SPRITE</span></div>
+              <div class="character-caption"><span class="caption-label">ASSISTANT / CHARACTER</span><p id="character-line">A placeholder line for character dialogue or reactions.</p></div>
+            </div>
+            <button class="secret-hotspot-content" id="nose-secret-content" type="button" aria-label="Secret conclusion shortcut"></button>
+            <div class="visual-panel-bottom"><span>SUBJECT FILE / <span id="subject-code">MATH</span></span><span id="page-progress">01 — 03</span></div>
+          </section>
+        </section>
+
+        <!-- Conclusion screen -->
+        <section id="conclusion-screen" class="screen conclusion-screen">
+          <div class="conclusion-inner">
+            <p class="eyebrow">END OF PRESENTATION</p>
+            <h2>WHAT WE<br><span>LEARNED</span></h2>
+            <p class="conclusion-intro">A brief recap of the subjects covered.</p>
+            <div class="summary-grid" id="summary-grid">
+              <article class="summary-card"><span>01 / MATH</span><p>Summary placeholder. Replace with the most important things learned.</p></article>
+              <article class="summary-card"><span>02 / BIOLOGY</span><p>Summary placeholder. Replace with the most important things learned.</p></article>
+              <article class="summary-card"><span>03 / GEOGRAPHY</span><p>Summary placeholder. Replace with the most important things learned.</p></article>
+            </div>
+            <div class="conclusion-actions"><button id="return-menu" class="nav-button primary" type="button">RETURN TO MENU ↗</button></div>
+          </div>
+          <div class="conclusion-decoration">END<br>OF<br>FILE</div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="global-footer">
+      <span>INTERACTIVE PRESENTATION PROTOTYPE</span>
+      <span>← → NAVIGATE &nbsp; / &nbsp; ESC MENU &nbsp; / &nbsp; ? CONTROLS</span>
+    </footer>
+  </main>
+
+  <dialog id="controls-dialog" class="controls-dialog">
+    <div class="dialog-heading"><span>CONTROL REFERENCE</span><button id="close-help" type="button" aria-label="Close">×</button></div>
+    <div class="control-row"><kbd>←</kbd><kbd>→</kbd><span>Previous / next page</span></div>
+    <div class="control-row"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><span>Open Math / Biology / Geography</span></div>
+    <div class="control-row"><kbd>Home</kbd><span>Return to main menu</span></div>
+    <div class="control-row"><kbd>End</kbd><span>Open conclusion</span></div>
+    <div class="control-row"><kbd>?</kbd><span>Show this control reference</span></div>
+    <p class="dialog-note">The hidden character hotspot also opens the conclusion. Its position is temporary and can be adjusted to the final character artwork.</p>
+  </dialog>
+
+  <script src="scripts/content.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
